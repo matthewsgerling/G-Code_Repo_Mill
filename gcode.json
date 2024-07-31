@@ -1,0 +1,84 @@
+{
+	// Place your snippets for gcode here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+
+	"Basic G-Code Start File": {
+		"prefix": "gcStart",
+	  	"body": [
+ 	   		"%",
+    		"",
+			"O${1: Program O Code}",
+    		"",
+    		"(Matthew Gerling: ${CURRENT_MONTH}/${CURRENT_DATE}/${CURRENT_YEAR})",
+    		"(${TM_FILENAME_BASE} : ${2:Description})",
+			"",
+			"G17 G20 G40 G49 G80 (SAFTY LINE)",
+    		"",
+    		"(${3:Operation Info})",
+			"",
+			"G28",
+			"M31",
+			"T${4:} M06 (ToolNumber)",
+			"S${5:} M03 (ToolSpeed)",
+			"",
+			"G90 G54 G00 X${6: XStart} Y${7: YStart} ",
+			"G43 H${8:} Z1.0 (Tool length offset and move to safe height in Z)",
+			"G01 Z0.1 F${9:} M8 (Move to .1 above part at defined Feedrate based off tool)",
+			"G01 Z${10:} (Move to Z depth of first cut)",
+			"",
+			"(Next Move Here)",
+			"",
+  			],
+  		"description": "Basic G-Code Start File"
+	},
+
+
+	"Basic G-Code Tool Change File": {
+		"prefix": "gcToolChange",
+	  	"body": [
+			"",
+			"(Tool Change)",
+			"",
+			"G00 G53 M09",
+			"M05",
+			"G53 Z0.0",
+			"(${1:Type Of Tool to change too})",
+			"(${2:Description of Change})",
+			"T${3: (Tool Code)} M06",
+			"S${4: (Tool RPM)} M03",
+			"",
+			"G90 G54 G00 ${5: (X,Y of start position)}",
+			"G43 H${6: (Tool Hight Offset)} Z1.0",
+			"G01 Z0.1 F${7: (Define Feedrate of tool)} M8",
+			"G01 Z${8: (Depth of first Cut)}",
+			"",
+  			],
+  		"description": "Basic G-Code Tool Change"
+	},
+	
+
+	"Basic G-Code End File": {
+		"prefix": "gcEnd",
+	  	"body": [
+			"",
+			"G00 Z1.0 M09 (Move spindle above part)",
+			"M05 (Turn off spindle)",
+			"G00 G53 Z0.0 (Send to Machine Zero)",
+			"M33 (Turn off Coolant)",
+			"M30 (End and Reset)",
+			"%",
+  			],
+  		"description": "Basic G-Code End File"
+	},
+}
