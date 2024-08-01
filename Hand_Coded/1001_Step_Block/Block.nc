@@ -26,7 +26,7 @@ S10000 M03 (ToolSpeed)
 G90 G54 G00 X-1.0 Y0.25   
 G43 H01 Z1.0 (Tool length offset and move to safe height in Z)
 G01 Z0.1 F25.0 M8 (Move to .1 above part at defined Feedrate based off tool)
-G01 Z-0.025 (Move to Z depth of first cut)
+G01 Z0.0 (Move to Z depth of first cut)
 
 (Facing Top)
 G01 X5.6 Y0.25
