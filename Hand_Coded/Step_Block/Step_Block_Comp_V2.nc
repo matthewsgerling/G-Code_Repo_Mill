@@ -23,22 +23,22 @@ M31
 T01 M06 (ToolNumber)
 S10000 M03 (ToolSpeed)
 
-G90 G54 G00 X-1.6 Y1.6
+G90 G54 G00 X-1.6 Y2.0
 G43 H01 Z1.0
-G01 Z0.1 F108 M8
+G01 Z0.1 F108.0 M8
 G01 Z-0.40
 
 (Cutter Comp Start)
-G41 D01 G01 X0.0 Y1.6
+G41 D01 G01 X-0.5 Y1.6
 
 (Contour)
 G01 X3.6 Y1.6
 G01 X3.6 Y0.2
 G01 X0.2 Y0.2
-G01 X0.2 Y1.6
+G01 X0.2 Y2.0
 
 (Cutter Comp Stop)
-G40 G01 X0.2 Y2.0
+G40 G01 X0.0 Y3.5
 
 
 G00 Z1.0 M09 (Move spindle above part)
