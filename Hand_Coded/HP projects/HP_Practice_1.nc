@@ -26,12 +26,10 @@ G01 X2.75 Y2.25
 G02 X3.25 Y1.75 I0 J-0.5
 G01 X3.25 Y0.25
 G01 X0.8 Y0.25
-G01 X0.25 Y0.52
-
-
+G01 X0.25 Y0.607
 
 (Cutter Comp Stop)
-G40 G01 X-1.0 Y0.52
+G40 X-1.0 Y0.52
 
 
 G00 Z1.0 M09 (Move spindle above part)
