@@ -29,7 +29,7 @@ G90 G54 G00 X00 Y00
 G43 H05 Z1.0 (Tool length offset and move to safe height in Z)
 G01 Z0.1 F3.568 M8 (Move to .1 above part at defined Feedrate based off tool)
 
-(Drilling Holes)
+(Spot Drill Holes)
 G00 X1.65 Y-1.5
 G81 G99 Z-0.05 R0.1 F3.568(Begin G81)
 X1.65 Y-0.30

@@ -37,6 +37,18 @@ G01 X0.25 Y0.607
 G40 X-1.0 Y0.52
 
 
+(Spot Drill holes)
+G00 X1.65 Y-1.5
+G82 G99 Z-0.05 R0.1 F3.568(Begin G81)
+X1.65 Y-0.30
+G80 G00 Z1.0
+
+G00 X2.775 Y.650
+G82 G99 Z-0.05 F3.568 R0.1
+G80 G00 Z1.0
+
+(Start Drilling)
+
 (Tool Change)
 
 G00 G53 M09
@@ -51,14 +63,14 @@ G01 Z0.1 F (Define Feedrate of tool) M8
 G01 Z (Depth of first Cut)
 
 G00 X.800 Y1.75
-G83 Z-0.45 F15. R0.1 Q0.175 P1.5 ;
+G83 G99 Z-0.45 F15. R0.1 Q0.175 P1.5 ;
 G80 Z1.0
 
 (Tool Change)
 
 G00 G53 M09
 M05
-G53 Z0.0
+G53 G00 Z0.0
 T (Tool Code) M06
 S (Tool RPM) M03
 
@@ -68,8 +80,8 @@ G01 Z0.1 F (Define Feedrate of tool) M8
 G01 Z (Depth of first Cut)
 
 G00 X2.775 Y.650
-G83 Z-0.35 F15. R0.1 Q0.175 P1.5 ;
-G80 Z1.0
+G83 G99 Z-0.35 F15. R0.1 Q0.175 P1.5 ;
+G80 G00 Z1.0
 
 
 
