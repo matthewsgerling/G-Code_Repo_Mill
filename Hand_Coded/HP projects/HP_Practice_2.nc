@@ -37,6 +37,40 @@ G01 X0.25 Y0.607
 G40 X-1.0 Y0.52
 
 
+(Tool Change)
+
+G00 G53 M09
+M05
+G53 Z0.0
+T (Tool Code) M06
+S (Tool RPM) M03
+
+G90 G54 G00  (X,Y of start position)
+G43 H (Tool Hight Offset) Z1.0
+G01 Z0.1 F (Define Feedrate of tool) M8
+G01 Z (Depth of first Cut)
+
+G00 X.800 Y1.75
+G83 Z-0.45 F15. R0.1 Q0.175 P1.5 ;
+G80 Z1.0
+
+(Tool Change)
+
+G00 G53 M09
+M05
+G53 Z0.0
+T (Tool Code) M06
+S (Tool RPM) M03
+
+G90 G54 G00  (X,Y of start position)
+G43 H (Tool Hight Offset) Z1.0
+G01 Z0.1 F (Define Feedrate of tool) M8
+G01 Z (Depth of first Cut)
+
+G00 X2.775 Y.650
+G83 Z-0.35 F15. R0.1 Q0.175 P1.5 ;
+G80 Z1.0
+
 
 
 G00 Z1.0 M09 (Move spindle above part)
