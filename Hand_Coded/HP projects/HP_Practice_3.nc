@@ -36,6 +36,79 @@ G01 X0.25 Y0.607
 (Cutter Comp Stop)
 G40 X-1.0 Y0.52
 
+G00 Z1.0
+
+
+(Center Bore)
+
+(Tool Change)
+
+G00 G53 M09
+M05
+G53 Z0.0
+(ANOTHER ENDMILL BUT SMOLL)
+T05 (Tool Code) M06
+S10000 (Tool RPM) M03
+
+G90 G54 G00 X1.7 Y1.6 (X,Y of start position)
+G43 H05 (Tool Hight Offset) Z1.0
+G01 Z0.1 F25. (Define Feedrate of tool) M8
+
+G00 X1.7 Y1.6
+
+G01 X1.7 Y.90 Z-.025
+G01 X1.7 Y1.6 Z-.025
+G01 X1.7 Y.90 Z-.05
+G01 X1.7 Y1.6 Z-.05
+G01 X1.7 Y.90 Z-.075
+G01 X1.7 Y1.6 Z-.075
+G01 X1.7 Y.90 Z-.1
+G01 X1.7 Y1.6 Z-.1
+
+G01 X1.7 Y.90 Z-.125
+G01 X1.7 Y1.6 Z-.125
+G01 X1.7 Y.90 Z-.15
+G01 X1.7 Y1.6 Z-.15
+G01 X1.7 Y.90 Z-.175
+G01 X1.7 Y1.6 Z-.175
+G01 X1.7 Y.90 Z-.2
+G01 X1.7 Y1.6 Z-.2
+
+G01 X1.7 Y.90 Z-.225
+G01 X1.7 Y1.6 Z-.225
+G01 X1.7 Y.90 Z-.25
+G01 X1.7 Y1.6 Z-.25
+G01 X1.7 Y.90 Z-.275
+G01 X1.7 Y1.6 Z-.275
+G01 X1.7 Y.90 Z-.3
+G01 X1.7 Y1.6 Z-.3
+
+G01 X1.7 Y.90 Z-.325
+G01 X1.7 Y1.6 Z-.325
+G01 X1.7 Y.90 Z-.35
+G01 X1.7 Y1.6 Z-.35
+G01 X1.7 Y.90 Z-.375
+G01 X1.7 Y1.6 Z-.375
+G01 X1.7 Y.90 Z-.4
+G01 X1.7 Y1.6 Z-.4
+G01 X1.7 Y.90 Z-.425
+G01 X1.7 Y1.6 Z-.425
+G01 X1.7 Y.90 Z-.45
+G01 X1.7 Y1.6 Z-.45
+
+G01 X1.7 Y.90 Z-.45
+
+G01 X1.7 Y.90
+G41 D02 G01 X1.9 Y1.0
+G01 X1.9 Y1.6
+G03 X1.5 Y1.6 I-0.2 J0.0    
+G01 X1.5 Y.9
+G03 X1.9 Y.9 I0.2 J0.0
+G01 X1.9 Y1.5
+G40 G01 X1.7 Y1.6 
+
+G00 Z1.0
+
 (Tool Change)
 (Spot Drilling)
 G00 G53 M09
@@ -45,7 +118,7 @@ G53 Z0.0
 T02 (Tool Code) M06
 S830 (Tool RPM) M03
 
-G90 G54 G00  (X,Y of start position)
+G90 G54 G00 X.800 Y1.75 (X,Y of start position)
 G43 H02 (Tool Hight Offset) Z1.0
 G01 Z0.1 F3.568 (Define Feedrate of tool) M8
 
@@ -86,7 +159,7 @@ G53 G00 Z0.0
 T04 (Tool Code) M06
 S1990 (Tool RPM) M03
 
-G90 G54 G00 X2.775 Y.650(X,Y of start position)
+G90 G54 G00 X2.775 Y.650 (X,Y of start position)
 G43 H04 (Tool Hight Offset) Z1.0
 G01 Z0.1 F10. (Define Feedrate of tool) M8
 

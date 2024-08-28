@@ -1,0 +1,179 @@
+%
+
+O01030
+
+(Matthew Gerling: 08/26/2024)
+(slotAssemblyStepOne : Create the First slot assembly piece)
+
+G17 G20 G40 G49 G80 (SAFTY LINE)
+
+(Tools)
+(T1 -- 1/2in EndMill, 3 Flute)(10000 speed -- 75. feed)
+(T2 -- 1/4in EndMill, 3 Flute)(10000 speed -- 40. feed)
+(T5 -- 1/4in Spot drill)(830 speed -- 3.568 feed)
+(T10 -- 2in Face Mill, 5 Flute)(10000 speed -- 60. feed)
+(T16 -- 1/4in Reamer)(2292 speed -- 18.336 feed)
+(T22 -- B-Drill)(2808 speed -- 15.45 feed)
+
+(Material)
+(Dimentions -- 3.5x2x1 in)
+
+(Process)
+(Faced Before Running program)
+
+M31
+T05 M06 (ToolNumber)
+S830 M03 (ToolSpeed)
+
+G90 G54 G00 X00 Y00 
+G43 H05 Z1.0 (Tool length offset and move to safe height in Z)
+G01 Z0.1 F3.568 M8 (Move to .1 above part at defined Feedrate based off tool)
+
+(Spot Drill Holes)
+
+G00 X1.65 Y-1.5
+G82 G99 Z-0.05 R0.1 F3.568
+X1.65 Y-0.30
+G80 G00 Z1.0
+
+(Tool Change)
+(Drilling Holes)
+
+G00 G53 M09
+M05
+G53 Z0.0
+T22 M06
+S2808 M03
+
+G90 G54 G00 X0.0 Y0.0 (X,Y of start position)
+G43 H22 (Tool Hight Offset) Z1.0
+G01 Z0.1 F15.45 (Define Feedrate of tool) M8
+
+G00 X1.65 Y-1.5
+G83 G99 Z-0.70 R0.1 F15.45 Q.115
+X1.65 Y-0.30
+G80 G00 Z1.0
+
+(Tool Change)
+(Pocket Contour)
+G00 G53 M09
+M05
+G53 Z0.0
+T02 (Tool Code) M06
+S10000 (Tool RPM) M03
+
+G90 G54 G00 X0.75 Y-1.349 (X,Y of start position)
+G43 H02 (Tool Hight Offset) Z1.0
+G01 Z0.1 F25. (Define Feedrate of tool) M8
+
+G01 X0.75 Y-1.349 Z-.025
+G01 X0.75 Y-0.451 Z-.025
+G01 X0.75 Y-1.349 Z-.050
+G01 X0.75 Y-0.451 Z-.050
+G01 X0.75 Y-1.349 Z-.075
+G01 X0.75 Y-0.451 Z-.075
+G01 X0.75 Y-1.349 Z-.1
+G01 X0.75 Y-0.451 Z-.1
+
+G01 X0.75 Y-1.349 Z-.125
+G01 X0.75 Y-0.451 Z-.125
+G01 X0.75 Y-1.349 Z-.150
+G01 X0.75 Y-0.451 Z-.150
+G01 X0.75 Y-1.349 Z-.175
+G01 X0.75 Y-0.451 Z-.175
+G01 X0.75 Y-1.349 Z-.2
+G01 X0.75 Y-0.451 Z-.2
+
+G01 X0.75 Y-1.349 Z-.225
+G01 X0.75 Y-0.451 Z-.225
+G01 X0.75 Y-1.349 Z-.250
+G01 X0.75 Y-0.451 Z-.250
+G01 X0.75 Y-1.349 Z-.275
+G01 X0.75 Y-0.451 Z-.275
+G01 X0.75 Y-1.349 Z-.3
+G01 X0.75 Y-0.451 Z-.3
+
+G01 X0.75 Y-1.349 Z-.325
+G01 X0.75 Y-0.451 Z-.325
+G01 X0.75 Y-1.349 Z-.350
+G01 X0.75 Y-0.451 Z-.350
+G01 X0.75 Y-1.349 Z-.375
+G01 X0.75 Y-0.451 Z-.375
+G01 X0.75 Y-1.349 Z-.4
+G01 X0.75 Y-0.451 Z-.4
+
+G01 X0.75 Y-1.349 Z-.4
+G01 X0.75 Y-0.451 Z-.4
+
+G01 X0.75 Y-1.349 
+G41 D02 G01 X0.949 Y-1.249
+G01 X0.949 Y-0.451
+G03 X0.551 Y-0.451 I-.199 J0.0
+G01 X0.551 Y-1.349
+G03 X0.949 Y-1.349 I.199 J0.0
+G01 X0.949 Y-1.349
+G40 G01 X0.75 Y-1.349 
+
+G00 Z0.1
+
+G00 X1.801 Y-.900
+G13 G91 Z-0.05 D02 I0.130 K0.249 Q0.01 L8 F10.
+G90
+
+
+G01 X1.801 Y-.900 Z-.025
+G01 X2.799 Y-.900 Z-.025
+G01 X1.801 Y-.900 Z-.050
+G01 X2.799 Y-.900 Z-.050
+G01 X1.801 Y-.900 Z-.075
+G01 X2.799 Y-.900 Z-.075
+G01 X1.801 Y-.900 Z-.1
+G01 X2.799 Y-.900 Z-.1
+
+G01 X1.801 Y-.900 Z-.125
+G01 X2.799 Y-.900 Z-.125
+G01 X1.801 Y-.900 Z-.150
+G01 X2.799 Y-.900 Z-.150
+G01 X1.801 Y-.900 Z-.175
+G01 X2.799 Y-.900 Z-.175
+G01 X1.801 Y-.900 Z-.2
+G01 X2.799 Y-.900 Z-.2
+
+G01 X1.801 Y-.900 Z-.225
+G01 X2.799 Y-.900 Z-.225
+G01 X1.801 Y-.900 Z-.250
+G01 X2.799 Y-.900 Z-.250
+G01 X1.801 Y-.900 Z-.275
+G01 X2.799 Y-.900 Z-.275
+G01 X1.801 Y-.900 Z-.3
+G01 X2.799 Y-.900 Z-.3
+
+G01 X1.801 Y-.900 Z-.325
+G01 X2.799 Y-.900 Z-.325
+G01 X1.801 Y-.900 Z-.350
+G01 X2.799 Y-.900 Z-.350
+G01 X1.801 Y-.900 Z-.375
+G01 X2.799 Y-.900 Z-.375
+G01 X1.801 Y-.900 Z-.4
+G01 X2.799 Y-.900 Z-.4
+
+G01 X1.801 Y-.900 Z-.4
+G01 X2.799 Y-.900 Z-.4
+
+G01 X1.801 Y-.900
+G41 D02 G01 X1.900 Y-1.149
+G01 X2.799 Y-1.149
+G03 X2.799 Y-0.651 I0.0 J0.249
+G01 X1.801 Y-0.651
+G03 X1.801 Y-1.149 I0.0 J-0.249
+G01 X2.700 Y-1.149
+G40 G01 X2.799 Y-.900
+
+G00 Z0.1
+
+G00 Z1.0 M09 (Move spindle above part)
+M05 (Turn off spindle)
+G00 G53 Z0.0 (Send to Machine Zero)
+M33 (Turn off Coolant)
+M30 (End and Reset)
+%
