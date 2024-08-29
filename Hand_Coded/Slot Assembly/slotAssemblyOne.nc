@@ -10,7 +10,7 @@ G17 G20 G40 G49 G80 (SAFTY LINE)
 (Tools)
 (T1 -- 1/2in EndMill, 3 Flute)(10000 speed -- 75. feed)
 (T2 -- 1/4in EndMill, 3 Flute)(10000 speed -- 40. feed)
-(T5 -- 1/4in Spot drill)(830 speed -- 3.568 feed)
+(T5 -- 1/4in Spot drill)(8300 speed -- 35.68 feed)
 (T10 -- 2in Face Mill, 5 Flute)(10000 speed -- 60. feed)
 (T16 -- 1/4in Reamer)(2292 speed -- 18.336 feed)
 (T22 -- B-Drill)(2808 speed -- 15.45 feed)
@@ -27,12 +27,12 @@ S830 M03 (ToolSpeed)
 
 G90 G54 G00 X00 Y00 
 G43 H05 Z1.0 (Tool length offset and move to safe height in Z)
-G01 Z0.1 F3.568 M8 (Move to .1 above part at defined Feedrate based off tool)
+G01 Z0.1 F35.68 M8 (Move to .1 above part at defined Feedrate based off tool)
 
 (Spot Drill Holes)
 
 G00 X1.65 Y-1.5
-G82 G99 Z-0.05 R0.1 F3.568
+G82 G99 Z-0.05 R0.1 F35.68
 X1.65 Y-0.30
 G80 G00 Z1.0
 
@@ -53,6 +53,28 @@ G00 X1.65 Y-1.5
 G83 G99 Z-0.70 R0.1 F15.45 Q.115
 X1.65 Y-0.30
 G80 G00 Z1.0
+
+
+(Tool Change)
+(Reaming 2 holes)
+
+G00 G53 M09
+M05
+G53 Z0.0
+(Type Of Tool to change too)
+(Description of Change)
+T16 (Tool Code) M06
+S1404 (Tool RPM) M03
+
+G90 G54 G00  (X,Y of start position)
+G43 H16 (Tool Hight Offset) Z1.0
+G01 Z0.1 F25.(Define Feedrate of tool) M8
+
+G00 X1.65 Y-1.5
+G85 G99 Z-0.60 R0.1 F25.
+X1.65 Y-0.30
+G80 G00 Z1.0
+
 
 (Tool Change)
 (Pocket Contour)
@@ -111,15 +133,12 @@ G01 X0.949 Y-0.451
 G03 X0.551 Y-0.451 I-.199 J0.0
 G01 X0.551 Y-1.349
 G03 X0.949 Y-1.349 I.199 J0.0
-G01 X0.949 Y-1.349
-G40 G01 X0.75 Y-1.349 
+G01 X0.949 Y-0.551
+G40 G01 X0.75 Y-0.451
 
 G00 Z0.1
 
 G00 X1.801 Y-.900
-G13 G91 Z-0.05 D02 I0.130 K0.249 Q0.01 L8 F10.
-G90
-
 
 G01 X1.801 Y-.900 Z-.025
 G01 X2.799 Y-.900 Z-.025
