@@ -67,7 +67,7 @@ T16 (Tool Code) M06
 S1404 (Tool RPM) M03
 
 G90 G54 G00  (X,Y of start position)
-G43 H16 (Tool Hight Offset) Z1.0
+G43 H16 (Tool Hight Offset) Z1.
 G01 Z0.1 F25.(Define Feedrate of tool) M8
 
 G00 X1.65 Y-1.5
