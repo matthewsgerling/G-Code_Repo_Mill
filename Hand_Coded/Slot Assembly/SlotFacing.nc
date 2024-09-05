@@ -16,12 +16,14 @@ M31
 T1 M06 (ToolNumber)
 S6000 M03 (ToolSpeed)
 
-G90 G54 G00 X-1.5 Y1.0 
+G90 G54 G00 X-1.5 Y.5 
 G43 H1 Z1.0 (Tool length offset and move to safe height in Z)
 G01 Z0.1 F70. M8 (Move to .1 above part at defined Feedrate based off tool)
 G01 Z0.0 (Move to Z depth of first cut)
 
-G01 X6.75 Y1.0
+G01 X6.75 Y0.5
+G01 X6.75 Y1.5
+G01 X-1.5 Y1.5
 
 G00 Z1.0 M09 (Move spindle above part)
 M05 (Turn off spindle)
